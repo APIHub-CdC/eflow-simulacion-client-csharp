@@ -4,18 +4,18 @@ Es una solución que produce ingresos puntuales de una persona natural.
 
 ## Requisitos para Windows
 
-- .NET Core 3.1 SDK [vea como instalar][1]
-- MonoDevelop [vea como instalar][2]
-- Microsoft .NET Framework 4.8 Developer Pack [vea como instalar][3]
+- .NET Core 3.1 SDK(recomendada) [vea como instalar][1]
+- Microsoft .NET Framework 4.X Developer Pack [vea como instalar][2]
 
 ### Requisitos para linux/MacOs
-- Se debe contar con las siguientes dependencias para SO linux:
+- MonoDevelop [vea como instalar][3]
+- Se debe contar con las siguientes dependencias para SO linux/MacOs:
     - nuget
     - mono-devel
     - mono-xbuild
 
 ```sh
-#ejemplo para instalar las dependencias adicionales
+#ejemplo para instalar las dependencias adicionales en linux
 apt install nuget
 apt install mono-devel
 apt install mono-xbuild
@@ -76,12 +76,13 @@ Para ejecutar las pruebas unitarias con windows:
 ```sh
 # Compilación
 build.bat
+dotnet msbuild IO.EflowPeruSimulacion.sln
 # Ejecución
-mono bin\
+"packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" src/IO.EflowPeruSimulacion.Test/bin/Debug/IO.EflowPeruSimulacion.Test.dll
 
 ```
 
-Para ejecutar las pruebas unitarias con linux:
+Para ejecutar las pruebas unitarias con linux/MacOs:
 
 ```sh
 # Compilación
@@ -90,10 +91,10 @@ sh build.sh
 sh mono_nunit_test.sh
 # También puede probar con el siguiente comando
 msbuild IO.EflowPeruSimulacion.sln && \
-    mono .bin/IO.EflowPeruSimulacion.Test/bin/Debug/IO.EflowPeruSimulacion.Test.dll
+    mono ./packages/NUnit.Runners.2.6.4/tools/nunit-console.exe src/IO.EflowPeruSimulacion.Test/bin/Debug/IO.EflowPeruSimulacion.Test.dll
 
 ```
 
 [1]: https://dotnet.microsoft.com/download
-[2]: https://www.mono-project.com/download/stable/#download-win
-[3]: https://www.microsoft.com/es-mx/download/details.aspx?id=30653
+[2]: https://dotnet.microsoft.com/download/dotnet-framework
+[3]: https://www.mono-project.com/download/stable/#download-win

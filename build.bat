@@ -13,3 +13,5 @@ copy packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll bin\Newtonsof
 copy packages\JsonSubTypes.1.2.0\lib\net45\JsonSubTypes.dll bin\JsonSubTypes.dll
 copy packages\RestSharp.105.1.0\lib\net45\RestSharp.dll bin\RestSharp.dll
 %CSCPATH%\csc  /reference:bin\Newtonsoft.Json.dll;bin\JsonSubTypes.dll;bin\RestSharp.dll;System.ComponentModel.DataAnnotations.dll  /target:library /out:bin\IO.EflowPeruSimulacion.dll /recurse:src\IO.EflowPeruSimulacion\*.cs /doc:bin\IO.EflowPeruSimulacion.xml
+
+.\nuget.exe install NUnit.Runners -Version 2.6.4 -OutputDirectory packages
