@@ -76,8 +76,9 @@ Para ejecutar las pruebas unitarias con windows:
 ```sh
 # Compilación
 build.bat
+dotnet msbuild IO.EflowPeruSimulacion.sln
 # Ejecución
-mono bin\
+"packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" src/IO.EflowPeruSimulacion.Test/bin/Debug/IO.EflowPeruSimulacion.Test.dll
 
 ```
 
