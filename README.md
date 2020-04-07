@@ -1,4 +1,4 @@
-# Estimador de ingresos Eflow Perú - Simulación
+# eflow-client-csharp
 
 Es una solución que produce ingresos puntuales de una persona natural.
 
@@ -46,7 +46,6 @@ Los siguientes datos a modificar se encuentran en ***IO.EflowPeruSimulacion.Test
 Es importante contar con el método Init() que se encargará de inicializar la url. Modificar la URL ***('the_url')*** de la petición de la variable ***basePath***, como se muestra en el siguiente fragmento de código:
 
 ```csharp
-
 [SetUp]
 public void Init()
 {
@@ -76,8 +75,9 @@ Para ejecutar las pruebas unitarias con windows:
 ```sh
 # Compilación
 build.bat
+dotnet msbuild IO.EflowPeruSimulacion.sln
 # Ejecución
-mono bin\
+"packages/NUnit.Runners.2.6.4/tools/nunit-console.exe" src/IO.EflowPeruSimulacion.Test/bin/Debug/IO.EflowPeruSimulacion.Test.dll
 
 ```
 
