@@ -46,7 +46,6 @@ Los siguientes datos a modificar se encuentran en ***IO.EflowPeruSimulacion.Test
 Es importante contar con el método Init() que se encargará de inicializar la url. Modificar la URL ***('the_url')*** de la petición de la variable ***basePath***, como se muestra en el siguiente fragmento de código:
 
 ```csharp
-
 [SetUp]
 public void Init()
 {
